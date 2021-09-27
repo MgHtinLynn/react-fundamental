@@ -31,7 +31,7 @@ class Book extends Component {
               </a>
             </h3>
             {book.authors && (
-              <p className="mt-1 text-sm text-gray-500">{book.authors[0]}</p>
+              <p className="mt-1 text-sm text-gray-500">{book.authors.join(", ")}</p>
             )}
 
           </div>
