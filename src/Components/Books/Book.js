@@ -16,7 +16,8 @@ class Book extends Component {
 
         <div
           className="mb-8 rounded-md overflow-hidden">
-          <SelectShelf key={book.id} updateBookShelf={this.onUpdateBookShelf} shelf={book.shelf}/>
+          <SelectShelf key={book.id} updateBookShelf={this.onUpdateBookShelf}
+                       shelf={book.hasOwnProperty('shelf') ? book.shelf : 'none'}/>
           <img
             src={thumbnailImage}
             alt={book.title}

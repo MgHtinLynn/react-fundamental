@@ -2,8 +2,8 @@ import {useState, useCallback} from "react";
 import {Popover} from '@headlessui/react'
 import {SearchIcon} from '@heroicons/react/solid'
 import {ArrowLeftIcon} from '@heroicons/react/outline'
-import {Link, useHistory} from "react-router-dom";
-import {search as SearchByQuery, update} from '../Api/BooksAPI'
+import {Link} from "react-router-dom";
+import {search as SearchByQuery} from '../Api/BooksAPI'
 import debounce from 'lodash.debounce';
 import SearchBookList from "../Components/Search/SearchBookList";
 import PropTypes from "prop-types";
@@ -12,10 +12,9 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export function Search({books}) {
+export function Search({books, updateBookShelf}) {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState([])
-  const history = useHistory()
 
   const searchQuery = (searchValue) => {
     SearchByQuery(searchValue).then((results) => {
@@ -24,12 +23,6 @@ export function Search({books}) {
       } else {
         setResults([])
       }
-    })
-  }
-
-  const updateBookShelf = (updateBook, shelf) => {
-    update(updateBook, shelf).then(() => {
-      history.push("/")
     })
   }
 
@@ -110,5 +103,6 @@ export function Search({books}) {
 
 Search.prototype = {
   books: PropTypes.array.isRequired,
+  updateBookShelf: PropTypes.func.isRequired
 }
 

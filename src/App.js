@@ -34,9 +34,15 @@ class App extends Component {
         <Route exact path="/">
           <BookShelves books={this.state.bookLists} updateBookShelf={this.updateBookShelf}/>
         </Route>
-        <Route exact path="/search">
-          <Search books={this.state.bookLists}/>
-        </Route>
+
+        <Route path="/search" render={({history}) => (
+          <Search
+            books={this.state.bookLists}
+            updateBookShelf={(updateBook, shelf) => {
+              this.updateBookShelf(updateBook, shelf);
+              history.push("/");
+            }}/>
+        )}/>
       </div>
     );
   }
