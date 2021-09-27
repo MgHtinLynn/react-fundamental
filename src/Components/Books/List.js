@@ -13,9 +13,9 @@ class List extends Component {
           <div className="max-w-2xl mx-auto py-2 px-4 lg:py-4 lg:max-w-7xl">
 
             <div className="mt-6 grid grid-cols-1 gap-y-5 gap-x-3 sm:grid-cols-2 lg:grid-cols-6 xl:gap-x-4">
-                {books.length > 0 && books.map((book) => (
-                  <Book key={book.id} book={book} updateBookShelf={updateBookShelf}/>
-                ))}
+              {books.length > 0 && books.map((book) => (
+                <Book key={book.id} book={book} updateBookShelf={updateBookShelf}/>
+              ))}
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ import SearchButton from "../Components/Books/SearchButton";
 
 class BookShelves extends Component {
   render() {
+    const {books, updateBookShelf} = this.props;
     return (
       <>
         <header className="bg-green-900">
@@ -12,7 +13,7 @@ class BookShelves extends Component {
           </div>
         </header>
         <main className="max-w-7xl mx-auto py-3 px-4 sm:py-6 sm:px-6 lg:px-8 text-center">
-          <BookList/>
+          <BookList books={books} updateBookShelf={updateBookShelf}/>
         </main>
         <SearchButton/>
       </>

@@ -15,7 +15,7 @@ class SelectShelf extends Component {
           onChange={(e) => updateBookShelf(e.target.value)}
         >
           <option disabled>Move To ...</option>
-          <option value={undefined}>None</option>
+          <option value="none">None</option>
           {Shelves.map(shelf => (
             <option key={shelf.id} value={shelf.id}>{shelf.label}</option>
           ))}

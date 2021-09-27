@@ -11,7 +11,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export function Search() {
+export function Search({books}) {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState([])
   const history = useHistory()
@@ -98,7 +98,7 @@ export function Search() {
         </Popover>
 
         {results.length > 0 && (
-          <SearchBookList books={results} label="Search Results" updateBookShelf={updateBookShelf}/>
+          <SearchBookList books={books} searchBooks={results} label="Search Results" updateBookShelf={updateBookShelf}/>
         )}
 
       </div>
