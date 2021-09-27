@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Book from "./Book";
+import PropTypes from "prop-types";
 
 class List extends Component {
   render() {
@@ -22,6 +23,12 @@ class List extends Component {
       </>
     );
   }
+}
+
+List.propTypes = {
+  label: PropTypes.string.isRequired,
+  books: PropTypes.array.isRequired,
+  updateBookShelf: PropTypes.func.isRequired
 }
 
 export default List

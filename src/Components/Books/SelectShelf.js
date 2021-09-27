@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {Shelves} from "../../Config/Shelves";
+import PropTypes from "prop-types";
 
 class SelectShelf extends Component {
   render() {
@@ -23,6 +24,11 @@ class SelectShelf extends Component {
       </div>
     );
   }
+}
+
+SelectShelf.propTypes = {
+  shelf: PropTypes.string.isRequired,
+  updateBookShelf: PropTypes.func.isRequired
 }
 
 export default SelectShelf

@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import BookList from "../Components/Books/BookList";
 import SearchButton from "../Components/Books/SearchButton";
+import PropTypes from "prop-types";
 
 class BookShelves extends Component {
   render() {
@@ -19,6 +20,11 @@ class BookShelves extends Component {
       </>
     );
   }
+}
+
+BookShelves.propTypes = {
+  books: PropTypes.array.isRequired,
+  updateBookShelf: PropTypes.func.isRequired
 }
 
 export default BookShelves

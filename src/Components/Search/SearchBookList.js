@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Book from "../Books/Book";
+import PropTypes from "prop-types";
 
 class SearchBookList extends Component {
   render() {
@@ -31,6 +32,13 @@ class SearchBookList extends Component {
       </div>
     );
   }
+}
+
+SearchBookList.propTypes = {
+  label: PropTypes.string.isRequired,
+  books: PropTypes.array.isRequired,
+  searchBooks: PropTypes.array.isRequired,
+  updateBookShelf: PropTypes.func.isRequired
 }
 
 export default SearchBookList

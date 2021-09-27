@@ -1,7 +1,9 @@
 import React, {Component} from "react";
 import SelectShelf from "./SelectShelf";
+import PropTypes from 'prop-types'
 
 class Book extends Component {
+
   onUpdateBookShelf = (shelf) => {
     this.props.updateBookShelf(this.props.book, shelf)
   }
@@ -39,6 +41,11 @@ class Book extends Component {
       </div>
     );
   }
+}
+
+Book.propTypes = {
+  book: PropTypes.object.isRequired,
+  updateBookShelf: PropTypes.func.isRequired
 }
 
 export default Book

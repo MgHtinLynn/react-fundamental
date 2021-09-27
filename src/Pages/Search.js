@@ -6,6 +6,7 @@ import {Link, useHistory} from "react-router-dom";
 import {search as SearchByQuery, update} from '../Api/BooksAPI'
 import debounce from 'lodash.debounce';
 import SearchBookList from "../Components/Search/SearchBookList";
+import PropTypes from "prop-types";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -106,3 +107,8 @@ export function Search({books}) {
   );
 
 }
+
+Search.prototype = {
+  books: PropTypes.array.isRequired,
+}
+
